@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ternurita Bebé | Catálogo Oficial</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Poppins', sans-serif; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="bg-slate-50 text-gray-800 pb-32">
+
+  <!-- Header Superior -->
+  <header class="bg-white shadow-sm sticky top-0 z-50 border-b border-sky-100">
+    <div class="max-w-5xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center space-x-2">
+        <span class="text-2xl">👶</span>
+        <h1 class="text-xl font-bold bg-gradient-to-r from-sky-500 to-pink-500 bg-clip-text text-transparent">
+          Ternurita Bebé
+        </h1>
+      </div>
+      <button onclick="solicitarAyudaDirecta()" class="bg-emerald-500 hover:bg-emerald-600 text-white px-3 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1.5 shadow-sm transition">
+        <!-- Logo WhatsApp Oficial -->
+        <img src="https://www.acceseo.com/wp-content/uploads/2015/01/WhatsApp.jpg" alt="WhatsApp" class="w-5 h-5 rounded-full object-cover">
+        <span>Contactar</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Banner de Envíos Seguros y Asistencia -->
+  <section class="max-w-5xl mx-auto px-4 mt-4 grid grid-cols-1 md:grid-cols-3 gap-3">
+    <!-- Banner Envíos -->
+    <div class="md:col-span-2 bg-gradient-to-r from-sky-500 via-sky-400 to-indigo-500 rounded-2xl p-4 text-white shadow-md flex items-center justify-between">
+      <div>
+        <span class="bg-white/20 text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">📦 Envíos Garantizados</span>
+        <h2 class="text-base sm:text-lg font-bold mt-1">¡Entregas seguras en Quito y a todo el Ecuador! 🚚🇪🇨</h2>
+        <p class="text-xs text-white/90">Enviamos tu pedido rápido y protegido por Servientrega o motorizado.</p>
+      </div>
+      <span class="text-3xl hidden sm:block">🛵</span>
+    </div>
+
+    <!-- Banner Asistencia -->
+    <div class="bg-gradient-to-r from-pink-400 to-rose-400 rounded-2xl p-4 text-white shadow-md flex flex-col justify-between">
+      <div>
+        <h3 class="text-sm font-bold">¿Dudas con tu pedido?</h3>
+        <p class="text-xs opacity-90">Pregunta nomás lo que necesites al vendedor.</p>
+      </div>
+      <button onclick="solicitarAyudaDirecta()" class="mt-2 bg-white text-emerald-600 hover:bg-slate-100 font-bold px-3 py-1.5 rounded-xl text-xs flex items-center justify-center gap-2 shadow transition">
+        <img src="https://www.acceseo.com/wp-content/uploads/2015/01/WhatsApp.jpg" alt="WhatsApp" class="w-4 h-4 rounded-full object-cover">
+        <span>Consultar Vendedor</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- Filtros de Categorías -->
+  <div class="max-w-5xl mx-auto px-4 my-6 overflow-x-auto flex gap-2 no-scrollbar">
+    <button onclick="filtrarCat('todos')" class="btn-cat bg-sky-500 text-white px-4 py-1.5 rounded-full text-xs font-medium shrink-0 shadow">Todos</button>
+    <button onclick="filtrarCat('conjuntos')" class="btn-cat bg-white text-gray-600 px-4 py-1.5 rounded-full text-xs font-medium shrink-0 border border-slate-200">Conjuntos</button>
+    <button onclick="filtrarCat('bodys')" class="btn-cat bg-white text-gray-600 px-4 py-1.5 rounded-full text-xs font-medium shrink-0 border border-slate-200">Bodys</button>
+    <button onclick="filtrarCat('tinas')" class="btn-cat bg-white text-gray-600 px-4 py-1.5 rounded-full text-xs font-medium shrink-0 border border-slate-200">Tinas</button>
+    <button onclick="filtrarCat('ternos')" class="btn-cat bg-white text-gray-600 px-4 py-1.5 rounded-full text-xs font-medium shrink-0 border border-slate-200">Ternos</button>
+    <button onclick="filtrarCat('baberos')" class="btn-cat bg-white text-gray-600 px-4 py-1.5 rounded-full text-xs font-medium shrink-0 border border-slate-200">Baberos</button>
+    <button onclick="filtrarCat('cobijas')" class="btn-cat bg-white text-gray-600 px-4 py-1.5 rounded-full text-xs font-medium shrink-0 border border-slate-200">Cobijas</button>
+    <button onclick="filtrarCat('mamas')" class="btn-cat bg-white text-gray-600 px-4 py-1.5 rounded-full text-xs font-medium shrink-0 border border-slate-200">Mamás</button>
+    <button onclick="filtrarCat('guantes')" class="btn-cat bg-white text-gray-600 px-4 py-1.5 rounded-full text-xs font-medium shrink-0 border border-slate-200">Guantes</button>
+    <button onclick="filtrarCat('lana')" class="btn-cat bg-white text-gray-600 px-4 py-1.5 rounded-full text-xs font-medium shrink-0 border border-slate-200">Sacos/Lana</button>
+    <button onclick="filtrarCat('ajuares')" class="btn-cat bg-white text-gray-600 px-4 py-1.5 rounded-full text-xs font-medium shrink-0 border border-slate-200">Ajuares</button>
+    <button onclick="filtrarCat('busos')" class="btn-cat bg-white text-gray-600 px-4 py-1.5 rounded-full text-xs font-medium shrink-0 border border-slate-200">Busos</button>
+    <button onclick="filtrarCat('bividis')" class="btn-cat bg-white text-gray-600 px-4 py-1.5 rounded-full text-xs font-medium shrink-0 border border-slate-200">Bividís</button>
+    <button onclick="filtrarCat('varios')" class="btn-cat bg-white text-gray-600 px-4 py-1.5 rounded-full text-xs font-medium shrink-0 border border-slate-200">Varios</button>
+  </div>
+
+  <!-- Contenedor del Grid -->
+  <main class="max-w-5xl mx-auto px-4">
+    <div id="grid-productos" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 sm:gap-4">
+      <!-- Carga dinámica -->
+    </div>
+  </main>
+
+  <!-- Modal para ver imagen completa 100% -->
+  <div id="modal-imagen" class="fixed inset-0 bg-black/80 z-50 hidden flex items-center justify-center p-4" onclick="cerrarModalImagen()">
+    <div class="relative max-w-3xl w-full max-h-[90vh] flex flex-col items-center justify-center" onclick="event.stopPropagation()">
+      <button onclick="cerrarModalImagen()" class="absolute -top-10 right-0 text-white font-bold text-xl bg-white/20 hover:bg-white/40 px-3 py-1 rounded-full">✕ Cerrar</button>
+      <img id="modal-img-src" src="" class="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl">
+      <p id="modal-img-title" class="text-white font-semibold text-center mt-3 text-sm"></p>
+    </div>
+  </div>
+
+  <!-- Carrito/Bolsa en la parte inferior -->
+  <div id="barra-pedido" class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 p-3 shadow-lg z-40 hidden">
+    <div class="max-w-5xl mx-auto flex items-center justify-between gap-3">
+      <div>
+        <p class="text-xs text-gray-500">Prendas seleccionadas: <span id="cant-items" class="font-bold text-sky-600">0</span></p>
+        <p class="text-xs text-gray-400">Pide todo en un solo mensaje</p>
+      </div>
+      <div class="flex gap-2">
+        <button onclick="vaciarCarrito()" class="text-xs text-rose-500 px-2 py-1 underline">Limpiar</button>
+        <button onclick="enviarPedidoFinal()" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-2 shadow transition">
+          <img src="https://www.acceseo.com/wp-content/uploads/2015/01/WhatsApp.jpg" alt="WhatsApp" class="w-4 h-4 rounded-full object-cover">
+          <span>Enviar Pedido</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const NUMERO_WA = "593998888089";
+    const LOGO_WA_URL = "https://www.acceseo.com/wp-content/uploads/2015/01/WhatsApp.jpg";
+
+    // Guía de Tallas para Secciones con Talla
+    const GUIA_TALLAS = "T0 (0-6m), T1 (6-12m), T2 (1-2a), T3 (2a+), T4 (3a+)";
+
+    // Base de Datos de Productos
+    const productos = [
+      // CONJUNTOS
+      { id: 1, cat: 'conjuntos', nombre: 'Conjunto Algodón Estampado Niña', precio: '$4.50', img: 'https://i.postimg.cc/QC14MwCD/Whats-App-Image-2026-07-27-at-13-42-37.jpg', tag: '🎨 6 Colores', tallas: GUIA_TALLAS },
+      { id: 2, cat: 'conjuntos', nombre: 'Conjunto Algodón Estampado Niña Mod. 2', precio: '$4.50', img: 'https://i.postimg.cc/xdZt3nbj/Whats-App-Image-2026-07-27-at-13-42-37-(1).jpg', tag: '🎨 6 Colores', tallas: GUIA_TALLAS },
+      { id: 3, cat: 'conjuntos', nombre: 'Conjunto Algodón Estampado Niño', precio: '$4.50', img: 'https://i.postimg.cc/NjfDh56q/Whats-App-Image-2026-07-27-at-13-42-37-(2).jpg', tag: '🎨 6 Colores', tallas: GUIA_TALLAS },
+      { id: 4, cat: 'conjuntos', nombre: 'Conjunto Algodón Estampado Niño Mod. 2', precio: '$4.50', img: 'https://i.postimg.cc/pVfJpDkW/Whats-App-Image-2026-07-27-at-13-42-38.jpg', tag: '🎨 6 Colores', tallas: GUIA_TALLAS },
+      { id: 5, cat: 'conjuntos', nombre: 'Conjunto Algodón Estampado', precio: '$4.50', img: 'https://i.postimg.cc/XJM9vJCd/Whats-App-Image-2026-07-27-at-13-42-37-(3).jpg', tag: '🎨 6 Colores', tallas: GUIA_TALLAS },
+      { id: 6, cat: 'conjuntos', nombre: 'Conjunto Algodón Estampado Niño Mod. 3', precio: '$4.50', img: 'https://i.postimg.cc/ncd7DTD0/Whats-App-Image-2026-07-27-at-13-42-37-(4).jpg', tag: '🎨 6 Colores', tallas: GUIA_TALLAS },
+      { id: 7, cat: 'conjuntos', nombre: 'Conjunto Algodón Rayado Niño', precio: '$4.50', img: 'https://i.postimg.cc/0jXQbWBG/Whats-App-Image-2026-07-27-at-13-45-45.jpg', tag: '🎨 6 Colores', tallas: GUIA_TALLAS },
+      { id: 8, cat: 'conjuntos', nombre: 'Conjunto Algodón Llano Color Fuerte', precio: '$5.50', img: 'https://i.postimg.cc/DzfwPK3x/Whats-App-Image-2026-07-27-at-13-52-27.jpg', tag: '🎨 6 Colores', tallas: GUIA_TALLAS },
+      { id: 9, cat: 'conjuntos', nombre: 'Conjunto Algodón Llano Niña', precio: '$4.50', img: 'https://i.postimg.cc/bJHLcbBk/Whats-App-Image-2026-07-27-at-13-55-21.jpg', tag: '🎨 6 Colores', tallas: GUIA_TALLAS },
+
+      // BODYS
+      { id: 10, cat: 'bodys', nombre: 'Body Rayado', precio: '$3.00', img: 'https://i.postimg.cc/tRr6w2gG/Whats-App-Image-2026-07-27-at-14-16-22.jpg', tag: null, tallas: null },
+      { id: 11, cat: 'bodys', nombre: 'Body Estampado Niña', precio: '$3.00', img: 'https://i.postimg.cc/501q3y2d/Whats-App-Image-2026-07-27-at-13-45-45-(1).jpg', tag: null, tallas: null },
+      { id: 12, cat: 'bodys', nombre: 'Body Estampado Niño', precio: '$3.00', img: 'https://i.postimg.cc/wMMNfmKb/Whats-App-Image-2026-07-27-at-13-45-45-(2).jpg', tag: null, tallas: null },
+
+      // TINAS
+      { id: 13, cat: 'tinas', nombre: 'Tina de Baño para Bebé', precio: '$8.00', img: 'https://i.postimg.cc/YS8j5Czb/Whats-App-Image-2026-07-27-at-13-45-44.jpg', tag: null, tallas: null },
+
+      // TERNOS
+      { id: 14, cat: 'ternos', nombre: 'Terno Plumón Abrigado', precio: '$10.00', img: 'https://i.postimg.cc/T1Z3GySr/Whats-App-Image-2026-07-27-at-14-16-01-(1).jpg', tag: null, tallas: null },
+      { id: 15, cat: 'ternos', nombre: 'Terno Babero', precio: '$6.50', img: 'https://i.postimg.cc/gc1ySgJr/Whats-App-Image-2026-07-27-at-13-45-45-(3).jpg', tag: null, tallas: null },
+      { id: 16, cat: 'ternos', nombre: 'Terno Capucha', precio: '$6.50', img: 'https://i.postimg.cc/ZR2NQqT3/Whats-App-Image-2026-07-27-at-13-45-45-(4).jpg', tag: null, tallas: null },
+      { id: 17, cat: 'ternos', nombre: 'Terno Estrellita', precio: '$6.50', img: 'https://i.postimg.cc/t4BYfg5B/Whats-App-Image-2026-07-27-at-13-45-45-(5).jpg', tag: null, tallas: null },
+
+      // BABEROS
+      { id: 18, cat: 'baberos', nombre: 'Babero con Dibujito', precio: '$2.50', img: 'https://i.postimg.cc/7Z5kHYDq/Whats-App-Image-2026-07-27-at-14-01-00.jpg', tag: null, tallas: null },
+      { id: 19, cat: 'baberos', nombre: 'Babero Delantal Impermeable', precio: '$2.50', img: 'https://i.postimg.cc/qqrJgfwZ/Whats-App-Image-2026-07-27-at-13-45-46.jpg', tag: null, tallas: null },
+
+      // COBIJAS
+      { id: 20, cat: 'cobijas', nombre: 'Cobija Delltex Térmica', precio: '$12.00', img: 'https://i.postimg.cc/tRDQFV4q/Whats-App-Image-2026-07-27-at-13-55-21-(1).jpg', tag: null, tallas: null },
+      { id: 21, cat: 'cobijas', nombre: 'Cobija Suave Térmica Mod. 2', precio: '$12.00', img: 'https://i.postimg.cc/zvNhNcgq/Whats-App-Image-2026-07-27-at-14-07-40-(1).jpg', tag: null, tallas: null },
+
+      // MAMAS
+      { id: 22, cat: 'mamas', nombre: 'Bata Maternal Confortable', precio: '$6.50', img: 'https://i.postimg.cc/C5x2cmxx/Whats-App-Image-2026-07-27-at-13-55-21-(2).jpg', tag: null, tallas: null },
+
+      // GUANTES
+      { id: 23, cat: 'guantes', nombre: 'Guantes de Algodón Recién Nacido', precio: '$0.50 c/par', img: 'https://i.postimg.cc/FzXyRKw8/Whats-App-Image-2026-07-27-at-14-07-40.jpg', tag: null, tallas: null },
+
+      // LANA
+      { id: 24, cat: 'lana', nombre: 'Saco de Lana Tejido', precio: '$2.00 c/u (3 x $5.00)', img: 'https://i.postimg.cc/fbTt8dhN/Whats-App-Image-2026-07-27-at-14-20-03.jpg', tag: '🔥 Promoción Lana', tallas: null },
+      { id: 25, cat: 'lana', nombre: 'Pantalón de Lana Tejido', precio: '$2.00 c/u (3 x $5.00)', img: 'https://i.postimg.cc/Sx4zz5Tj/Whats-App-Image-2026-07-27-at-14-20-19.jpg', tag: '🔥 Promoción Lana', tallas: null },
+      { id: 26, cat: 'lana', nombre: 'Mono Plumón Abrigado', precio: '$10.00', img: 'https://i.postimg.cc/2jXq2yHS/Whats-App-Image-2026-07-27-at-14-16-01.jpg', tag: null, tallas: null },
+
+      // AJUARES
+      { id: 27, cat: 'ajuares', nombre: 'Ajuar Completo Niño', precio: '$12.00', img: 'https://i.postimg.cc/9XTMtbqy/Whats-App-Image-2026-07-27-at-14-16-00-(1).jpg', tag: null, tallas: null },
+      { id: 28, cat: 'ajuares', nombre: 'Ajuar Completo Niña', precio: '$12.00', img: 'https://i.postimg.cc/2ST3L5Ls/Whats-App-Image-2026-07-27-at-14-16-00.jpg', tag: null, tallas: null },
+      { id: 29, cat: 'ajuares', nombre: 'Ajuar Variedad de Colores', precio: '$12.00', img: 'https://i.postimg.cc/MHyp6Z8V/Whats-App-Image-2026-07-27-at-14-15-59.jpg', tag: null, tallas: null },
+
+      // BUSOS
+      { id: 30, cat: 'busos', nombre: 'Buso Rayado Algodón', precio: '$2.00 c/u (3 x $5.00)', img: 'https://i.postimg.cc/JnNftsGD/Whats-App-Image-2026-07-27-at-14-16-01-(4).jpg', tag: '🔥 Promoción 3x$5', tallas: GUIA_TALLAS },
+      { id: 31, cat: 'busos', nombre: 'Buso Llano Algodón', precio: '$2.00 c/u (3 x $5.00)', img: 'https://i.postimg.cc/Fzh2ShL2/Whats-App-Image-2026-07-27-at-14-16-01-(3).jpg', tag: '🔥 Promoción 3x$5', tallas: GUIA_TALLAS },
+
+      // BIVIDIS
+      { id: 32, cat: 'bividis', nombre: 'Bividí Algodón (Varios Colores)', precio: '$1.00 c/u', img: 'https://i.postimg.cc/cCZNcQVm/Whats-App-Image-2026-07-27-at-14-16-01-(2).jpg', tag: null, tallas: GUIA_TALLAS },
+
+      // VARIOS
+      { id: 33, cat: 'varios', nombre: 'Set Pañalera y Mochila', precio: '$12.00', img: 'https://i.postimg.cc/jjV3NsVH/Whats-App-Image-2026-07-27-at-14-16-00-(2).jpg', tag: null, tallas: null }
+    ];
+
+    let carrito = [];
+
+    // Renderizar Productos en pantalla
+    function renderProductos(lista) {
+      const container = document.getElementById('grid-productos');
+      container.innerHTML = '';
+
+      lista.forEach(p => {
+        const itemHtml = `
+          <div class="group bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden flex flex-col justify-between hover:shadow-md transition">
+            <div>
+              <!-- Imagen interactiva: click para ampliar / hover con suave adaptación -->
+              <div onclick="abrirModalImagen('${p.img}', '${p.nombre}')" class="relative bg-slate-100 aspect-square overflow-hidden cursor-pointer">
+                <img src="${p.img}" alt="${p.nombre}" class="w-full h-full object-cover group-hover:object-contain group-hover:scale-105 transition-all duration-300">
+                <span class="absolute bottom-1 right-1 bg-black/50 text-white text-[9px] px-1.5 py-0.5 rounded opacity-80">🔍 Toca para ampliar</span>
+              </div>
+              <div class="p-3">
+                <h4 class="font-bold text-xs sm:text-sm text-gray-800 line-clamp-2">${p.nombre}</h4>
+                <p class="text-sky-600 font-bold text-sm sm:text-base mt-1">${p.precio}</p>
+                
+                ${p.tag ? `<span class="inline-block mt-1 text-[10px] font-semibold text-purple-600 bg-purple-50 border border-purple-200 px-1.5 py-0.5 rounded-md">${p.tag}</span>` : ''}
+                
+                ${p.tallas ? `<p class="text-[10px] text-gray-500 mt-1 bg-slate-100 p-1 rounded"><strong>Tallas:</strong> ${p.tallas}</p>` : ''}
+              </div>
+            </div>
+            
+            <div class="p-3 pt-0 flex gap-2">
+              <button onclick="agregarAlPedido('${p.nombre}', '${p.precio}')" class="flex-1 bg-sky-50 hover:bg-sky-100 text-sky-600 border border-sky-200 text-xs font-semibold py-2 rounded-xl transition">
+                + Añadir
+              </button>
+              
+              <!-- Botón Directo WhatsApp con Ícono de la Imagen enviada -->
+              <button onclick="consultarIndividual('${p.nombre}', '${p.precio}')" title="Consultar por WhatsApp" class="bg-emerald-500 hover:bg-emerald-600 p-2 rounded-xl flex items-center justify-center shadow-sm transition shrink-0">
+                <img src="${LOGO_WA_URL}" alt="WhatsApp" class="w-5 h-5 rounded-full object-cover">
+              </button>
+            </div>
+          </div>
+        `;
+        container.innerHTML += itemHtml;
+      });
+    }
+
+    // Modal para zoom e inspección de imagen completa
+    function abrirModalImagen(src, nombre) {
+      document.getElementById('modal-img-src').src = src;
+      document.getElementById('modal-img-title').innerText = nombre;
+      document.getElementById('modal-imagen').classList.remove('hidden');
+    }
+
+    function cerrarModalImagen() {
+      document.getElementById('modal-imagen').classList.add('hidden');
+    }
+
+    // Filtrar por categoría
+    function filtrarCat(cat) {
+      document.querySelectorAll('.btn-cat').forEach(b => {
+        b.classList.remove('bg-sky-500', 'text-white');
+        b.classList.add('bg-white', 'text-gray-600');
+      });
+      event.target.classList.remove('bg-white', 'text-gray-600');
+      event.target.classList.add('bg-sky-500', 'text-white');
+
+      if (cat === 'todos') {
+        renderProductos(productos);
+      } else {
+        const filtrados = productos.filter(p => p.cat === cat);
+        renderProductos(filtrados);
+      }
+    }
+
+    // Agregar producto
+    function agregarAlPedido(nombre, precio) {
+      carrito.push({ nombre, precio });
+      actualizarBarraPedido();
+    }
+
+    function vaciarCarrito() {
+      carrito = [];
+      actualizarBarraPedido();
+    }
+
+    function actualizarBarraPedido() {
+      const barra = document.getElementById('barra-pedido');
+      const cant = document.getElementById('cant-items');
+      cant.innerText = carrito.length;
+      if (carrito.length > 0) {
+        barra.classList.remove('hidden');
+      } else {
+        barra.classList.add('hidden');
+      }
+    }
+
+    // Enviar varios productos
+    function enviarPedidoFinal() {
+      if (carrito.length === 0) return;
+      const resumen = carrito.map(i => `${i.nombre} (${i.precio})`).join('\n- ');
+      const msg = `Hola Ternurita Bebé 👶, me gustaría solicitar las siguientes prendas de su catálogo:\n\n- ${resumen}\n\n¿Me pueden confirmar disponibilidad, colores, tallas y envíos?`;
+      window.open(`https://wa.me/${NUMERO_WA}?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+    // Consulta individual por WhatsApp
+    function consultarIndividual(nombre, precio) {
+      const msg = `Hola Ternurita Bebé 👶, me interesa este producto de su catálogo: *${nombre}* (${precio}). ¿Me brindan información de colores, tallas disponibles y envíos?`;
+      window.open(`https://wa.me/${NUMERO_WA}?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+    // Ayuda general
+    function solicitarAyudaDirecta() {
+      const msg = `Hola Ternurita Bebé 👶, necesito ayuda con un pedido e información de envíos. ¿Me pueden atender por favor?`;
+      window.open(`https://wa.me/${NUMERO_WA}?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+    // Carga Inicial
+    renderProductos(productos);
+  </script>
+</body>
+</html>
